@@ -8,7 +8,7 @@ app.use(cors());
 
 const port = process.env.PORT || 3000 ;
 app.get('/',(req, res)=>{
-    res.send("Hola Mundo")
+    res.send('<h1>Hola Mundo</h1>')
 })
 app.listen(3000);
 console.log("Servidor en el puerto 3000")
