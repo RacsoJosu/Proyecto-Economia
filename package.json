@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "cors": "^2.8.5",
     "css-loader": "^6.7.3",
     "dotenv": "^16.0.3",
