@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors());
 app.set('port',port);
-app.use('/static',express.static('views'))
+app.use('/',express.static('views'))
 app.use(webpackMiddleware(webpack(webpackConfig)));
 
 

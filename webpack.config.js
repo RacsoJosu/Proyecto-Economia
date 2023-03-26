@@ -7,7 +7,7 @@ module.exports = {
     entry: './views/js/index.js',
     output: {
         path: path.join(__dirname,'views'),
-        filename: 'bundle.js'
+        filename: 'bundie.js'
     },
 
     module:{
