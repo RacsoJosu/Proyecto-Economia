@@ -4,54 +4,274 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arbnb-Shinball</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@400;500&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <link  href="CSS/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style_principal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="images/Logo_icono.ico">
+    <title>Principal | Siinbal </title>
 </head>
 <body>
-    <!-- Barra de navegacion -->
-    <nav class="navbar navbar-personali navbar-light">
-        <div class="container-fluid">
-          <a id="header" class="navbar-brand" href="#">Shinball</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              
-          </div>
+    
+    <!--navbar-->
+    <nav class="navbar navbar-expand-lg bg-ligth py-4 fixed-top ">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="principal.html">
+                <img src="images/Siinbal_Texto.png" alt="site icon" width="110px" >
+            </a>
+
+            <!--ICONOS DEL NAVBAR-->
+
+            <div class="order-lg-2 nav-btns">
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class = "position-absolute top-0 start-100 translate-middle badge bg-custom">5</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class="bi bi-heart-fill"></i>
+                    <span class = "position-absolute top-0 start-100 translate-middle badge bg-custom">2</span>
+                </button><button type="button" class="btn position-relative">
+                    <i class="bi bi-search"></i> 
+                </button>
+            </div>
+            
+            <!--MENU DESPLEGABLE-->
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle = "collapse" data-bs-target ="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#header">Inicio</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#Catalogo">Catalogo</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#Especiales">Especiales</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#Blog">Blog</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#Sobre nosotros">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item px-2 py-2 border-0">
+                        <a class="nav-link text-uppercase text-dark" aria-current="page" href="#Popular">Popular</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
-      </nav>
-    <!-- Barra de navegacion -->
+    </nav>
+    <!--end navbar-->
 
-    <!-- login -->
-    <div class="container w-50">
-        <div class="imagen-user p-5 w-100">
-            <img src="src/person-circle.svg" class="mx-auto d-block svg p-2"  alt="no carga" srcset="">
-        </div>
 
-        <div class="w-100 justify-content-center align-items-center">
-            <div class="col-auto bg-light p-5">
-                <form action="" method="get">
-                    <div class="input-group p-2">
-                        <input type="text" class="form-control" placeholder="Email">
-                    </div>
-                    <div class="input-group p-2">
-                        <input type="password" class="form-control" placeholder="Password">
+    <!--header-->
 
-                    </div>
-                    <button class="btn btn-dark w-100">Login</button>
-                </form>
+    <header id = "header" class = "vh-100 carousel slide" data-bs-ride = "carousel" style = "padding-top: 104px;">
+        <div class = "container h-100 d-flex align-items-center carousel-inner">
+            <div class = "text-center carousel-item active">
+                <h2 class = "text-capitalize text-white">Los mejores planes</h2>
+                <h1 class = "text-uppercase py-2 fw-bold text-white">nuevos paquetes</h1>
+                <a href = "#" class = "btn mt-3 text-uppercase">rentar ahora</a>
+            </div>
+            <div class = "text-center carousel-item">
+                <h2 class = "text-capitalize text-white">Mejor precio y ofertas</h2>
+                <h1 class = "text-uppercase py-2 fw-bold text-white">Destinos nuevos</h1>
+                <a href = "#" class = "btn mt-3 text-uppercase">Adquirir</a>
             </div>
         </div>
-    </div>
-    <!-- login -->
+
+        <button class = "carousel-control-prev" type = "button" data-bs-target="#header" data-bs-slide = "prev">
+            <span class = "carousel-control-prev-icon"></span>
+        </button>
+        <button class = "carousel-control-next" type = "button" data-bs-target="#header" data-bs-slide = "next">
+            <span class = "carousel-control-next-icon"></span>
+        </button>
+    </header>
+
+    <!--end header-->
+    
+    <!--collecion-->
+
+    <section id = "Catalogo" class = "py-5">
+        <div class = "container">
+            <div class = "title text-center">
+                <h2 class = "position-relative d-inline-block">Catálogo</h2>
+            </div>
+
+            <div class = "row g-0">
+                <div class = "d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                    <button type = "button" class = "btn m-2 text-dark active-filter-btn" data-filter = "*">Todo</button>
+                    <button type = "button" class = "btn m-2 text-dark" data-filter = ".vendidos">Los Mas Rentados</button>
+                    <button type = "button" class = "btn m-2 text-dark" data-filter = ".popular">Populares en la zona</button>
+                    <button type = "button" class = "btn m-2 text-dark" data-filter = ".nuevo">Nuevos Destinos</button>
+                </div>
+
+                <div class = "collection-list mt-4 row gx-0 gy-3">
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 vendidos">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 50.50</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 popular">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-half"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 70.05</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 nuevo">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 100.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 popular">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-half"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 70.25</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 vendidos">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 40.70</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 nuevo">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 125.00</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 nuevo">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 90.50</span>
+                        </div>
+                    </div>
+
+                    <div class = "col-md-6 col-lg-4 col-xl-3 p-2 popular">
+                        <div class = "collection-img position-relative">
+                            <img src = "images/Propuesta.jpg" class = "w-100">
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class = "text-center">
+                            <div class = "rating mt-3">
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                                <span class = "text-custom"><i class = "bi bi-star-fill"></i></span>
+                            </div>
+                            <p class = "text-capitalize my-1">Apartamento</p>
+                            <span class = "fw-bold">$ 45.50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end collection-->
+
+    <!--Jquery-->
+    <script src="js/jquery-3.6.4.js"></script>
+
+    <!--ISOTOPE JS-->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+
+     <!--CSS y JS-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!--JS Custom-->
+    <script src="js/script.js">
+    </script>
+
 </body>
 </html>

@@ -4,7 +4,7 @@ const htmlwebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     mode:'development',
-    entry: './views/js/index.js',
+    entry: './views/js/script.js',
     output: {
         path: path.join(__dirname,'views'),
         filename: 'bundie.js'

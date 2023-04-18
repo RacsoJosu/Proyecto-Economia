@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+
+.fixed-top {
+    position: relative !important;
+ 
+  }
+
+.text-custom{
+    color:#ff600a !important;
+}
+
+/*BUTTONS*/
+
+/*Color de las alertas*/
+.bg-custom{
+
+    background-color: #ff600a !important;
+}
+
+/*Sombreado del Navbar*/
+.navbar{
+    box-shadow: 0 3px 9px 3px rgba(252, 20, 20, 0.1);
+}
+
+.btn:not(.nav-btns button){
+    background-color: #fff;
+    color: #ff600a;
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid #ff600a;
+}
+
+.btn:not(.nav-btns button):hover{
+    background-color: #ff600a;
+    color: #fff;
+    border-color: #ff600a;
+}
+
+/*Color de los link del navbar al interactuar*/
+.nav-link:hover{
+    color:#ff600a !important;
+}
+
+/*Linea de los link del navbar*/
+.nav-item{
+    border-bottom: 0.5px solid rgba(252, 20, 20, 0.1);
+}
+
+/*HEADER*/
+
+#header{
+    background: url(../images/Sala_2.jpg) top/cover no-repeat;
+}
+.carousel-inner h1{
+    font-size: 60px;
+}
+.carousel-item .btn{
+    border-color: #fff!important;
+}
+.carousel-item .btn:hover{
+    border-color: #ff600a !important;
+}
+
+/* title */
+.title h2::before{
+    position: absolute;
+    content: "";
+    width: 4px;
+    height: 50px;
+    background-color: #ff600a;
+    left: -50px;
+    top: 1%;
+}
+
+/* collection */
+.active-filter-btn{
+    background-color: #ff600a!important;
+    color: #fff!important;
+    border-color: #ff600a!important;
+}
+.filter-button-group .btn:hover{
+    color: #fff!important;
+}
+.collection-img span{
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+@media(min-width:992px){
+    .nav-item{border-bottom: none;}
+}
