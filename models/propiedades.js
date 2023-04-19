@@ -5,7 +5,11 @@ const {DataTypes} = require("sequelize");
 
 const Propiedad = sequelize.define(
     'propiedades',
-    {
+    {   id_propiedad:{
+            type:DataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true 
+        },
         calle:{
             type: DataTypes.STRING
         },
@@ -21,13 +25,13 @@ const Propiedad = sequelize.define(
         capacidad:{
             type: DataTypes.INTEGER
         },
-        precio:{
+        precio_noche:{
             type:DataTypes.FLOAT
         }
 
     },{
         freezeTableName: true,
-        timestamps:true
+        timestamps:false
     }
 );
 

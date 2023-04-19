@@ -1,4 +1,4 @@
-const {propiedadModel} = require("../models/propiedades.js");
+const propiedadModel = require("../models/propiedades.js");
 
 /**
  * Obtener una lista de la base de datos.
@@ -10,25 +10,25 @@ const {propiedadModel} = require("../models/propiedades.js");
  * este es mi controlador de la base de datos para traer 
  * informacion del modelo 
  */
-const getItems = async (req, res) => {
-    // aqui estamos buscando todo desde la base de datos o en la base de
-    // datos
-//     const data = await propiedadModel.find({});
-//     res.send({ data });
-    const data =["hola","mundo"]
-
-    res.send({data})
- }
+const getItems = async(req,res )=>{
+    const data = await propiedadModel.findAll();
+    res.json(data);
+    console.log("las propiedades se han listado exitosamente")
+};
 
 /**
  * va obtener un registro de la base de datos
  * @param {*} req 
  * @param {*} res 
  */
-const getItem = (req, res)=>{
-    const data =["hola","mundo"]
-    
-    res.send({data})
+const getItem = async (req, res)=>{
+    const data = await propiedadModel.findAll({
+        where:{
+            id_propiedad: req.params.id
+        }
+    });
+    res.json(data);
+    console.log("las propiedad se han obtenido exitosamente")
 };
 
 

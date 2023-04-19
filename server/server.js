@@ -8,9 +8,9 @@ const webpackConfig = require('../webpack.config');
 const port = process.env.PORT || 3000 ;
 
 const {dbConnectMySql} = require("../config/mysql"); 
-const engineDB = process.env.ENGINE_DB;
-const app = express();
 
+const app = express();
+app.use(express.json())
 app.use(cors());
 
 app.use('/',express.static('views'))

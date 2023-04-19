@@ -5,6 +5,7 @@ const username = process.env.MYSQL_USER;
 const password = process.env.MYSQL_PASSWORD;
 const host = process.env.MYSQL_HOST;
 
+
 const sequelize = new Sequelize(
     database,
     username,
@@ -13,7 +14,8 @@ const sequelize = new Sequelize(
         host,
         dialect:"mysql"
     }
-)
+);
+
 
 const dbConnectMySql = async()=>{
     try{
