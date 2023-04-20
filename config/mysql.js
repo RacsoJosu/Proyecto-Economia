@@ -28,3 +28,7 @@ const dbConnectMySql = async()=>{
 };
 
 module.exports = {sequelize, dbConnectMySql}
+// CREATE DATABASE shinball_bdd;
+// CREATE USER 'admin'@'localhost' IDENTIFIED BY 'administrador';
+// GRANT ALL PRIVILEGES ON shinball_bdd.* TO 'admin'@'localhost';
+// FLUSH PRIVILEGES;
