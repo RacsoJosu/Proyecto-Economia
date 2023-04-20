@@ -1,7 +1,9 @@
-// instanciamos sequelize
+// instancia sequelize
 const {sequelize} = require("../config/mysql"); 
 // datatypes de sequelize
 const {DataTypes} = require("sequelize");
+
+const Reserva = require("./reservas")
 
 const Propiedad = sequelize.define(
     'propiedades',
@@ -34,5 +36,10 @@ const Propiedad = sequelize.define(
         timestamps:false
     }
 );
+
+Propiedad.hasMany(Reserva,{
+    foreignKey:'id_propiedad'
+});
+Reserva.belongsTo(Propiedad)
 
 module.exports=Propiedad

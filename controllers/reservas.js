@@ -1,4 +1,4 @@
-const propiedadModel = require("../models/propiedades.js");
+const reservaModel = require("../models/reservas");
 
 /**
  * Obtener una lista de la base de datos.
@@ -11,7 +11,7 @@ const propiedadModel = require("../models/propiedades.js");
  * informacion del modelo 
  */
 const getItems = async(req,res )=>{
-    const data = await propiedadModel.findAll();
+    const data = await reservaModel.findAll();
     res.json(data);
     console.log("las propiedades se han listado exitosamente")
 };
@@ -22,9 +22,9 @@ const getItems = async(req,res )=>{
  * @param {*} res 
  */
 const getItem = async (req, res)=>{
-    const data = await propiedadModel.findAll({
+    const data = await reservaModel.findAll({
         where:{
-            id_propiedad: req.params.id
+            id_alquiler: req.params.id
         }
     });
     res.json(data);
@@ -40,9 +40,9 @@ const getItem = async (req, res)=>{
  */
 
 const deleteItem = async (req, res)=>{
-    await propiedadModel.destroy({
+    await reservaModel.destroy({
         where:{
-            id_propiedad:req.params.id
+            id_alquiler:req.params.id
         }
     })
     console.log("se ha eliminado un registro")
@@ -61,10 +61,10 @@ const deleteItem = async (req, res)=>{
  * @param {*} res 
  */
 const updateItem = async (req, res)=>{
-    await propiedadModel.update(req.body,{
+    await reservaModel.update(req.body,{
         where:
         {
-            id_propiedad: req.params.id
+            id_alquiler: req.params.id
         }
     })
     console.log("se ha modificado un registro")
@@ -79,7 +79,7 @@ const updateItem = async (req, res)=>{
 const createItem = async (req, res)=>{
     const { body }  = req;
     // envio la data 
-    const data = await propiedadModel.create(body);
+    const data = await reservaModel.create(body);
     res.json(data)
     console.log("registro nuevo insertado")
 

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { getItem,getItems, createItem,updateItem,deleteItem } = require("../controllers/propiedades");
+const { getItem,getItems, createItem,updateItem,deleteItem } = require("../controllers/reservas");
 
 router.post("/",createItem);
 
