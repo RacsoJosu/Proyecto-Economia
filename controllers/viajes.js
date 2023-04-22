@@ -1,4 +1,4 @@
-const viajeModel = require("../models/viajes");
+const {viajeModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.

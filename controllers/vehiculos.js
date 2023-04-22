@@ -1,4 +1,4 @@
-const vehiculoModel = require("../models/vehiculos");
+const {vehiculoModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.
@@ -13,7 +13,7 @@ const vehiculoModel = require("../models/vehiculos");
 const getItems = async(req,res )=>{
     const data = await vehiculoModel.findAll();
     res.json(data);
-    console.log("las propiedades se han listado exitosamente")
+    console.log("las vehiculos se han listado exitosamente")
 };
 
 /**
@@ -28,7 +28,7 @@ const getItem = async (req, res)=>{
         }
     });
     res.json(data);
-    console.log("las propiedad se han obtenido exitosamente")
+    console.log("el vehiculo se ha obtenido exitosamente")
 };
 
 

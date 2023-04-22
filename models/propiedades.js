@@ -37,9 +37,5 @@ const Propiedad = sequelize.define(
     }
 );
 
-Propiedad.hasMany(Reserva,{
-    foreignKey:'id_propiedad'
-});
-Reserva.belongsTo(Propiedad)
 
 module.exports=Propiedad

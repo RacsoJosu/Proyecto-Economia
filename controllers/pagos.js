@@ -1,4 +1,4 @@
-const pagosModel = require("../models/pagos");
+const {pagoModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.
@@ -11,7 +11,7 @@ const pagosModel = require("../models/pagos");
  * informacion del modelo 
  */
 const getItems = async(req,res )=>{
-    const data = await pagosModel.findAll();
+    const data = await pagoModel.findAll();
     res.json(data);
     console.log("las propiedades se han listado exitosamente")
 };
@@ -22,7 +22,7 @@ const getItems = async(req,res )=>{
  * @param {*} res 
  */
 const getItem = async (req, res)=>{
-    const data = await pagosModel.findAll({
+    const data = await pagoModel.findAll({
         where:{
             id_pago: req.params.id
         }
@@ -40,7 +40,7 @@ const getItem = async (req, res)=>{
  */
 
 const deleteItem = async (req, res)=>{
-    await pagosModel.destroy({
+    await pagoModel.destroy({
         where:{
             id_pago:req.params.id
         }
@@ -61,7 +61,7 @@ const deleteItem = async (req, res)=>{
  * @param {*} res 
  */
 const updateItem = async (req, res)=>{
-    await pagosModel.update(req.body,{
+    await pagoModel.update(req.body,{
         where:
         {
             id_pago: req.params.id
@@ -79,7 +79,7 @@ const updateItem = async (req, res)=>{
 const createItem = async (req, res)=>{
     const { body }  = req;
     // envio la data 
-    const data = await pagosModel.create(body);
+    const data = await pagoModel.create(body);
     res.json(data)
     console.log("registro nuevo insertado")
 

@@ -17,6 +17,12 @@ const Valoracion = sequelize.define(
         }, 
         puntuacion:{
             type: DataTypes.INTEGER
+        },
+        id_usuario:{
+            type:DataTypes.INTEGER
+        },
+        id_propiedad:{
+            type:DataTypes.INTEGER
         }
 
     },{

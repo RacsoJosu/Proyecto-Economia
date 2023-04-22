@@ -1,4 +1,4 @@
-const reservaModel = require("../models/reservas");
+const {reservaModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.

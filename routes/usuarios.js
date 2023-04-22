@@ -4,8 +4,7 @@ const { getItem,getItems, createItem,updateItem,deleteItem } = require("../contr
 
 router.post("/",createItem);
 
-router.get("/:id",getItem);
-
+router.get("/:email",getItem);
 router.get("/",getItems);
 
 router.put("/:id",updateItem);

@@ -1,4 +1,6 @@
-const propiedadModel = require("../models/propiedades.js");
+const {propiedadModel} = require("../models/index");
+const {reservaModel} = require("../models")
+const {valoracionModel} = require("../models")
 
 /**
  * Obtener una lista de la base de datos.
@@ -11,7 +13,13 @@ const propiedadModel = require("../models/propiedades.js");
  * informacion del modelo 
  */
 const getItems = async(req,res )=>{
-    const data = await propiedadModel.findAll();
+    const data = await propiedadModel.findAll(
+        {
+            include:{
+                model:valoracionModel
+            }
+        }
+    );
     res.json(data);
     console.log("las propiedades se han listado exitosamente")
 };

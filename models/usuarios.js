@@ -4,7 +4,6 @@ const pago = require('./pagos');
 const rentaVehiculos = require('./rentaVehiculos');
 const reserva = require('./reservas');
 const valoracion = require("./valoraciones");
-const viaje = require('./viajes');
 const Viajes = require('./viajes');
 
 
@@ -50,29 +49,5 @@ const Usuario = sequelize.define(
 );
 
 
-Usuario.hasMany(pago,{
-    foreignKey:'id_usuario'
-})
-pago.belongsTo(Usuario)
-Usuario.hasMany(rentaVehiculos,{
-    foreignKey:'id_usuario'
-})
-rentaVehiculos.belongsTo(Usuario);
-
-Usuario.hasMany(reserva,{
-    foreignKey:'id_usuario'
-})
-reserva.belongsTo(Usuario)
-
-Usuario.hasMany(valoracion,{
-    foreignKey:'id_usuario'
-})
-valoracion.belongsTo(Usuario)
-
-
-Usuario.hasMany(Viajes,{
-    foreignKey:'id_usuario'
-})
-Viajes.belongsTo(Usuario)
 
 module.exports = Usuario

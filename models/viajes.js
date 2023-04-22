@@ -26,7 +26,14 @@ const Viajes = sequelize.define(
         
         precio:{
             type:DataTypes.DOUBLE
+        },
+        id_usuario:{
+            type:DataTypes.INTEGER
+        },
+        matricula_vehiculo:{
+            type:DataTypes.STRING
         }
+
 
     },{
         freezeTableName: true,

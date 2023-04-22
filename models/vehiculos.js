@@ -24,15 +24,6 @@ const Vehiculo = sequelize.define(
     }
 );
 
-Vehiculo.hasMany(rentaVehiculos,{
-    primaryKey:'matricula'
-})
-rentaVehiculos.belongsTo(Vehiculo)
-
-Vehiculo.hasMany(Viajes,{
-    primaryKey:'matricula'
-})
-Viajes.belongsTo(Vehiculo)
 
 
 module.exports = Vehiculo

@@ -1,4 +1,4 @@
-const rentaVehiculosModel = require("../models/rentaVehiculos");
+const {rentaVehiculoModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.
@@ -11,7 +11,7 @@ const rentaVehiculosModel = require("../models/rentaVehiculos");
  * informacion del modelo 
  */
 const getItems = async(req,res )=>{
-    const data = await rentaVehiculosModel.findAll();
+    const data = await rentaVehiculoModel.findAll();
     res.json(data);
     console.log("las propiedades se han listado exitosamente")
 };
@@ -22,7 +22,7 @@ const getItems = async(req,res )=>{
  * @param {*} res 
  */
 const getItem = async (req, res)=>{
-    const data = await rentaVehiculosModel.findAll({
+    const data = await rentaVehiculoModel.findAll({
         where:{
             id_renta: req.params.id
         }
@@ -40,7 +40,7 @@ const getItem = async (req, res)=>{
  */
 
 const deleteItem = async (req, res)=>{
-    await rentaVehiculosModel.destroy({
+    await rentaVehiculoModel.destroy({
         where:{
             id_renta:req.params.id
         }
@@ -61,7 +61,7 @@ const deleteItem = async (req, res)=>{
  * @param {*} res 
  */
 const updateItem = async (req, res)=>{
-    await rentaVehiculosModel.update(req.body,{
+    await rentaVehiculoModel.update(req.body,{
         where:
         {
             id_renta: req.params.id
@@ -79,7 +79,7 @@ const updateItem = async (req, res)=>{
 const createItem = async (req, res)=>{
     const { body }  = req;
     // envio la data 
-    const data = await rentaVehiculosModel.create(body);
+    const data = await rentaVehiculoModel.create(body);
     res.json(data)
     console.log("registro nuevo insertado")
 

@@ -1,4 +1,4 @@
-const usuarioModel = require("../models/usuarios");
+const {usuarioModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.
@@ -13,7 +13,7 @@ const usuarioModel = require("../models/usuarios");
 const getItems = async(req,res )=>{
     const data = await usuarioModel.findAll();
     res.json(data);
-    console.log("las propiedades se han listado exitosamente")
+    console.log("los usuarios se han listado exitosamente")
 };
 
 /**
@@ -24,11 +24,19 @@ const getItems = async(req,res )=>{
 const getItem = async (req, res)=>{
     const data = await usuarioModel.findAll({
         where:{
-            id_usuario: req.params.id
+            email: req.params.email
         }
     });
-    res.json(data);
-    console.log("las propiedad se han obtenido exitosamente")
+    if (data.length ==0){
+        console.log("no existe el usuario")
+    }else{
+        res.json(data);
+        console.log("El usuario se ha obtenido exitosamente")
+
+        
+    }
+    
+    
 };
 
 
@@ -69,6 +77,7 @@ const updateItem = async (req, res)=>{
     })
     console.log("se ha modificado un registro")
     res.json({success:"se modifico de forma exitosa"})
+
 };
 
 /**

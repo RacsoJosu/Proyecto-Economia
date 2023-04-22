@@ -21,6 +21,12 @@ const Reserva = sequelize.define(
         },
         estado_propiedad:{
             type:DataTypes.INTEGER
+        },
+        id_usuario:{
+            type:DataTypes.INTEGER
+        },
+        id_propiedad:{
+            type:DataTypes.INTEGER
         }
 
     },{

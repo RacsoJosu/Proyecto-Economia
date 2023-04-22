@@ -1,7 +1,6 @@
 const {sequelize} = require('../config/mysql');
 const {DataTypes} = require("sequelize");
 
-
 const Pagos = sequelize.define(
     'pagos',
     {
@@ -27,5 +26,6 @@ const Pagos = sequelize.define(
         timestamps:false
     }
 );
+
 
 module.exports =Pagos

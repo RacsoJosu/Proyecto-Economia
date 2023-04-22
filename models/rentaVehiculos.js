@@ -1,5 +1,6 @@
 const {sequelize} = require('../config/mysql');
 const {DataTypes} = require("sequelize");
+const usuario = require('./usuarios');
 
 
 
@@ -16,6 +17,12 @@ const rentaVehiculos = sequelize.define(
         }, 
         cantidad_dias:{
             type:DataTypes.INTEGER
+        },
+        id_usuario:{
+            type:DataTypes.INTEGER
+        },
+        matricula_vehiculo:{
+            type:DataTypes.STRING
         }
 
     },{
@@ -23,6 +30,7 @@ const rentaVehiculos = sequelize.define(
         timestamps:false
     }
 );
+
 
 
 module.exports = rentaVehiculos

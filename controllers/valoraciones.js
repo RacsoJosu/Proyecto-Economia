@@ -1,4 +1,4 @@
-const valoracionModel = require("../models/valoraciones");
+const {valoracionModel} = require("../models");
 
 /**
  * Obtener una lista de la base de datos.
