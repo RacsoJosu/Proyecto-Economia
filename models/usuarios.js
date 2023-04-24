@@ -40,6 +40,9 @@ const Usuario = sequelize.define(
         }, 
         numero_cuenta:{
             type: DataTypes.STRING
+        },
+        sessionID:{
+            type:DataTypes.STRING
         } 
 
     },{

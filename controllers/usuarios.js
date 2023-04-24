@@ -1,4 +1,5 @@
-const {usuarioModel} = require("../models");
+const {usuarioModel, propiedadModel} = require("../models/index");
+const {reservaModel} = require("../models/index");
 
 /**
  * Obtener una lista de la base de datos.
@@ -10,10 +11,23 @@ const {usuarioModel} = require("../models");
  * este es mi controlador de la base de datos para traer 
  * informacion del modelo 
  */
-const getItems = async(req,res )=>{
-    const data = await usuarioModel.findAll();
+const getReservas = async(req,res )=>{
+    const data = await usuarioModel.findAll(
+        {
+            where:{
+                sessionId: 'abc123'
+
+            },
+            include:{
+                model:reservaModel,
+                include:{
+                    model:propiedadModel
+                }
+            }
+        }
+    );
     res.json(data);
-    console.log("los usuarios se han listado exitosamente")
+    console.log("las propiedades se han listado exitosamente")
 };
 
 /**
@@ -22,19 +36,22 @@ const getItems = async(req,res )=>{
  * @param {*} res 
  */
 const getItem = async (req, res)=>{
-    const data = await usuarioModel.findAll({
-        where:{
-            email: req.params.email
+        const data = await usuarioModel.findAll({
+            where:{
+                sessionId: 'abc123'
+            }
+        });
+        if (data.length ==0){
+            console.log("El usuario no ha iniciado sesion")
+        }else{
+            res.json(data);
+            console.log("El usuario se ha obtenido exitosamente")
+    
+            
         }
-    });
-    if (data.length ==0){
-        console.log("no existe el usuario")
-    }else{
-        res.json(data);
-        console.log("El usuario se ha obtenido exitosamente")
-
         
-    }
+   
+    
     
     
 };
@@ -86,14 +103,27 @@ const updateItem = async (req, res)=>{
  * @param {*} res 
  */
 const createItem = async (req, res)=>{
+    
     const { body }  = req;
     // envio la data 
-    const data = await usuarioModel.create(body);
-    res.json(data)
-    console.log("registro nuevo insertado")
+    const usuario = await usuarioModel.findOne({
+        where:{
+            email: body.email
+        }
+    });
 
+    if(usuario){
+        res.status(403)
+        res.send({error:"El usuario ya existe"})
+    }else{
+        const data = await usuarioModel.create(body);
+        res.status(200)
+        res.send({success:"exito"})
+
+    }
+    
 };
 
 
 // exportar la funcion aplicando deEstructuracion
-module.exports ={getItems,getItem,deleteItem,updateItem,createItem};
+module.exports ={getReservas,getItem,deleteItem,updateItem,createItem};

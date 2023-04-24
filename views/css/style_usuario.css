@@ -1,0 +1,30 @@
+
+.text-custom{
+    color:#ff600a !important;
+}
+
+/*BUTTONS*/
+
+/*Color de las alertas*/
+.bg-custom{
+
+    background-color: #ff600a !important;
+}
+
+/*Sombreado del Navbar*/
+.navbar{
+    box-shadow: 0 3px 9px 3px rgba(252, 20, 20, 0.1);
+}
+
+/*Color de los link del navbar al interactuar*/
+.nav-link:hover{
+    color:#ff600a !important;
+}
+
+/*Linea de los link del navbar*/
+.nav-item{
+    border-bottom: 0.5px solid rgba(252, 20, 20, 0.1);
+}
+@media(min-width:992px){
+    .nav-item{border-bottom: none;}
+}

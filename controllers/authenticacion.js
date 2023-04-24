@@ -1,3 +1,4 @@
+
 const {usuarioModel} = require("../models");
 
 
@@ -9,13 +10,21 @@ const login = async (req, res)=>{
     }
    });
    if(user){
-        res.status(200)
-        res.send({success:"exito"})
+        if (user.passw==passw) {
+          res.status(200)
+          res.send({success:"exito"})
+        } else {
+          res.status(403)
+          res.send({error:"la contraseña no es correcta"})
+          
+        }  
+        
         
    }else{
+     
         res.status(404)
-        res.send({error:"error en usuario y/o contraseña"})
+        res.send({error:"necesita registrarse el correo no existe"})
    }
-};
+}
 
 module.exports = {login}

@@ -3,7 +3,6 @@ const {sequelize} = require("../config/mysql");
 // datatypes de sequelize
 const {DataTypes} = require("sequelize");
 
-const Reserva = require("./reservas")
 
 const Propiedad = sequelize.define(
     'propiedades',
@@ -29,6 +28,9 @@ const Propiedad = sequelize.define(
         },
         precio_noche:{
             type:DataTypes.FLOAT
+        },
+        estado:{
+            type:DataTypes.INTEGER
         }
 
     },{

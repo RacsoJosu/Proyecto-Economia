@@ -10,7 +10,7 @@ router.get("/",getItems);
 
 router.put("/:id",updateItem);
 
-router.delete("/:id",deleteItem);
+router.delete("/:id_usuario/:id_propiedad",deleteItem);
 
 
 

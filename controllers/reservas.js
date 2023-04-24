@@ -42,7 +42,8 @@ const getItem = async (req, res)=>{
 const deleteItem = async (req, res)=>{
     await reservaModel.destroy({
         where:{
-            id_alquiler:req.params.id
+            id_usuario:req.params.id_usuario,
+            id_propiedad:req.params.id_propiedad
         }
     })
     console.log("se ha eliminado un registro")

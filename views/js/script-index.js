@@ -41,7 +41,7 @@ async function cargarPropiedades(){
       let propiedadHTML = `
       <div  class = "col-md-6 col-lg-4 col-xl-3 p-2 ${filtro[eleccion]}">
           <div class = "collection-img position-relative">
-            <img src = "images/Propuesta.jpg" class = "w-100">
+            <img src = "images/${propiedad.id_propiedad}_.jpg" class = "w-100">
             <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
           </div>
   
@@ -88,7 +88,7 @@ async function cargarPropiedades(){
       let vehiculoHTML = `
         <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
             <div class = "special-img position-relative overflow-hidden">
-                <img src = "images/Mazda3.avif" class = "w-100">
+                <img src = "images/auto_${vehiculo.matricula}.avif" class = "w-100">
                 <span class = "position-absolute d-flex align-items-center justify-content-center text-custom fs-4">
                     <i class = "bi bi-heart-fill"></i>
                 </span>

@@ -1,6 +1,6 @@
 const {propiedadModel} = require("../models/index");
-const {reservaModel} = require("../models")
-const {valoracionModel} = require("../models")
+const {reservaModel} = require("../models/index")
+const {valoracionModel} = require("../models/index")
 
 /**
  * Obtener una lista de la base de datos.

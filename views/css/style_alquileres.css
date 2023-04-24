@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+
+.fixed-top {
+    position: relative !important;
+ 
+}
+
+.text-custom{
+    color:#ff600a !important;
+}
+
+/*BUTTONS*/
+
+/*Color de las alertas*/
+.bg-custom{
+
+    background-color: #ff600a !important;
+}
+
+/*Sombreado del Navbar*/
+.navbar{
+    box-shadow: 0 3px 9px 3px rgba(252, 20, 20, 0.1);
+}
+
+/*Color de los link del navbar al interactuar*/
+.nav-link:hover{
+    color:#ff600a !important;
+}
+
+
+
+/* collection */
+.active-filter-btn{
+    background-color: #ff600a!important;
+    color: #fff!important;
+    border-color: #ff600a!important;
+}
+.filter-button-group .btn:hover{
+    color: #fff!important;
+}
+.collection-img span{
+    top: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+}
+
+/* special */
+.special-img span{
+    top: 20px;
+    right: 20px;
+}
+.special-list .btn{
+    padding: 8px 20px!important;
+}
+.special-img img{
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.special-img:hover img{
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+
+.btn:not(.nav-btns button){
+    background-color: #fff;
+    color: #ff600a;
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid #ff600a;
+}
+.btn:not(.nav-btns button):hover{
+    background-color: #ff600a;
+    color: #fff;
+    border-color: #ff600a;
+}
+
+@media(min-width:992px){
+    .nav-item{border-bottom: none;}
+}

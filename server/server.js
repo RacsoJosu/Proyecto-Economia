@@ -1,9 +1,14 @@
 require("dotenv").config();
 const express = require("express");
+// const myconnection = require('express-myconnection');
+// const { engine } = require("express-handlebars")
+const session = require("express-session")
+const bodyParser = require("body-parser")
 const cors = require("cors");
 const webpack = require("webpack");
 const webpackMiddleware = require("webpack-dev-middleware");
 const webpackConfig = require('../webpack.config'); 
+const cookieParser = require('cookie-parser');
 
 const port = process.env.PORT || 3000 ;
 
@@ -16,15 +21,26 @@ app.use(cors());
 app.use('/',express.static('views'))
 app.use(webpackMiddleware(webpack(webpackConfig)));
 
-//Archivos Estaticos
-// app.use(express.static(path.join(__dirname,'public')))
+app.use(cookieParser());
+app.use(session({
+    secret: 'secreto',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
 
-// app.get('/', function (req,res,next){
-//     res.send('Ewebik')
-// });
 
 
+// app.use(bodyParser.urlencoded({
+//     extended:true
+// }));
+// app.use(bodyParser.json())
 
+// app.use(session({
+//     secret:'secret',
+//     resave:true,
+//     saveUninitialized:true
+// }))
 //settings 
 app.set('port',port);
 
